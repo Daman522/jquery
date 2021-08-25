@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-md-3">
-                <div class="card" style="">
+                <div class="card">
                     <img class="card-img-top" src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap" style="width:100%;height:90px">
                     <div class="card-body">
                     <h5 class=" title card-title">Camera</h5>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" style="">
+                <div class="card">
                     <img class="card-img-top" src="https://cdn.corporatefinanceinstitute.com/assets/product-mix3.jpeg" alt="Card image cap" style="width:100%;height:90px">
                     <div class="card-body">
                     <h5 class=" title card-title"> Grocery</h5>
@@ -75,7 +75,7 @@
 
         <div class="row d-flex justify-content-center mt-2">
             <div class="col-md-3">
-                <div class="card" style="">
+                <div class="card" >
                     <img class="card-img-top" src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/04/2-2.jpg" alt="Card image cap" style="width:100%;height:90px">
                     <div class="card-body">
                     <h5 class=" title card-title"> Makeup</h5>
@@ -93,7 +93,7 @@
             </div>
 
             <div class="col-md-3">
-                <div class="card" style="">
+                <div class="card">
                     <img class="card-img-top" src="https://image.shutterstock.com/image-photo/natural-cosmetic-cream-serum-skincare-260nw-1029009367.jpg" alt="Card image cap" style="width:100%;height:90px">
                     <div class="card-body">
                     <h5 class=" title card-title">Product</h5>
@@ -111,7 +111,7 @@
             </div>
 
             <div class="col-md-3">
-                <div class="card" style="">
+                <div class="card" >
                     <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0070/7032/files/DIY_Product_Photography.jpg?v=1527090823" alt="Card image cap" style="width:100%;height:90px">
                     <div class="card-body">
                     <h5 class=" title card-title">Camera Collection</h5>
@@ -129,27 +129,6 @@
 
         </div>
 
-
-
-        <!-- <div class="row d-flex justify-content-center" style="margin-top: 3rem;">
-    
-            <div class="col-12">
-                <h3 class=" cart m-0 text-center font-weight-bold text-muted">
-                    Your Cart
-                </h3>
-                <div class="mt-2 p-4 bg-light" style="min-height: 120px;">
-                    <ul>
-
-                    </ul>
-                </div>
-            </div>
-        
-        </div>
-
-
-    </div> -->
-
-
     <div class="container">
        
         <table class="table">
@@ -160,29 +139,61 @@
               <th>Quantity</th>
               <th>Total</th>
               <th>Delete Item</th>
-
-
             </tr>
           </thead>
           <tbody>
             
-           
             
           </tbody>
         </table>
       </div>
 
 
-
-
-
-
-
-
 <script>
+    let array=[]
+     if(array.length !=0){
+    console.log("max",Math.max.apply(null,array))
+    }
+
+
+
+let largest = 0;
+let largest_ele;
+// let smallest = 0;
+// let smallest_ele;
+
+function find_largest(row){
+    console.log(largest,$(row).find('.total').text())
+    if(parseInt($(row).find('.total').text())  > largest){
+        largest_ele = row;
+        largest = $(row).find('.total').text();
+    }
+   
+    $(document).find("tr").removeClass("alert alert-danger");
+    $(largest_ele).addClass("alert alert-danger");
+}
+
+// function find_smallest(row){
+//     console.log(smallest,$(row).find('.total').text())
+//     if(parseInt($(row).find('.total').text())  < smallest){
+//         smallest_ele = row;
+//         smallest = $(row).find('.total').text();
+//     }
+   
+//     $(document).find("tr").removeClass("alert alert-danger");
+//     $(smallest_ele).addClass("alert alert-success");
+   
+// }
+
+
+
+
+
 $(document).ready(function () {
 
-    const array=[]
+    let largest = 0;
+    // let smallest = 0;
+
     $('.plus').click(function () {
         a= parseInt($(this).parent().find('#quantity').text())
         $(this).parent().find('#quantity').text(a+1)
@@ -195,12 +206,19 @@ $(document).ready(function () {
         }
     })
 
+
 $('.add').click(function () {
-   title= $(this).parent().find('.title').text()
+    title= $(this).parent().find('.title').text()
     desc= $(this).parent().find('.desc').text()
     price=parseInt($(this).parent().find('.price').text())
     quantity=parseInt($(this).parent().find('#quantity').text())
     total=price*quantity
+    array.push(total)
+
+    // n= Math.max.apply(null,array)
+    // n= parseInt($(this).parent().find('.total':conta).text())
+    // console.log('maximum element',n)
+ 
 
     row =$(`<tr><span class ="remove"></span></tr>`)
     col1= $(`<td> ${title}</td>`)
@@ -209,18 +227,20 @@ $('.add').click(function () {
     col4= $(`<td><span class="total">${total}</span></td>`)
     col5= $(`<td><button class=" btn btn-danger delete">Delete</button></td>`)
 
-    // col5=$(`<td><button class ="delete btn btn-danger"> Delete<button></td>`)
-
     col1.appendTo(row)
     col2.appendTo(row)
     col3.appendTo(row)
     col4.appendTo(row)
     col5.appendTo(row)
 
-
     row.appendTo('tbody')
 
 
+    find_largest(row);
+    // find_smallest(row);
+
+
+    
 })
 
 $(document).on('click','.plus2',function () {
@@ -232,26 +252,15 @@ $(document).on('click','.plus2',function () {
     t=p*q
     console.log(p)
     console.log(q)
-    // console.log(t)
     
 
    $(this).parent().parent().parent().find('.total').text(t)
-   array.push(t)
-    
-   for(let i=0; i<array.length;i++){
-       console.log("array ele :",array[i],"<br>")
-       if(array[i]>array[i+1]){
-           console.log(array[i])
-           $('tbody').children().find('.total').css("background-color","green")
-       
 
-       }
-       
+   find_largest($(this).parent().parent().parent());
+//    find_smallest($(this).parent().parent().parent());
 
-                  
-        
-    }
-  
+
+
 })
 
 $(document).on('click','.minus2',function () {
@@ -272,12 +281,15 @@ $(document).on('click','.minus2',function () {
 })
 
 $(document).on('click','.delete',function() {
-    console.log('kkkkkkkkkkk')
     $(this).parent().parent().remove()
 
 })
 
 })
+ 
+
+
+
 </script>
 
 
