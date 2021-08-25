@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <h2>First sortable div</h2>
+    
+    <div class="parent">
+        <li id="first">item 1<button class="bb">Delete</button></li>
+        <li id="second">item 1<button class="bb">Delete</button></li>
+        <li id="third">item 1<button class="bb">Delete</button></li>
+        <li id="four">item 1<button class="bb">Delete</button></li>
+       
+    </div>
+
+
+    <h2>Second sortable div</h2>
+    <div class="parent">
+        <li>
+            <a href="#">google</a>
+            item 1
+        </li>
+        <li class="6">item 1<button class="bb">Delete</button></li>
+        <li class="7">item 1<button class="bb">Delete</button></li>
+        <li class="8">item 1<button class="bb">Delete</button></li>
+        <li class="9">item 1<button class="bb">Delete</button></li>
+    </div>
+
+    <br>
+    <br>
+    
+   
+
+    <button id="btn-p"> CLICK ME</button>
+    <P id="pp">TEXT</P>
+
+
+<script>
+
+
+   
+$(document).ready(function(){
+//    $('#btn-1').click(function(){
+   
+//       $('#first').append("<button>confirm delete</button");
+//  });
+
+
+//  $('#btn-2').click(function(){
+   
+//    $('#second').append("<button>confirm delete</button");
+// });
+
+
+// $('#btn-3').click(function(){
+   
+//    $('#third').append("<button>confirm delete</button");
+// });
+
+// $('#btn-4').click(function(){
+   
+//    $('#four').append("<button>confirm delete</button");
+// });
+let flag = true;
+$('#btn-p').click(function(){
+    if(flag){
+        $('#pp').text('CHANGE TEXT');
+    }else{
+        $('#pp').text('1');
+    }
+    flag = !flag;
+})
+
+
+
+
+
+console.log($('#del'))
+
+$('.bb').click(function(){
+    alert($(this).parent().find('#del').length)
+    if($(this).parent().find('#del').length == 1){
+       
+        $(this).parent().find('#del').remove()
+        
+    }else{
+        $(this).parent().append("<button id='del'>confirm delete</button>")
+        alert($(this).parent().find('#del').length)
+    }
+    
+})
+
+// If ele is created before the page loads
+// $('#del').click(function(){
+//     console.log('hhhhhh')
+//     $(this).parent().remove()
+// })
+
+// If ele is created after the page loads
+$(document).on('click','#del',function(){
+    $(this).parent().remove()
+})
+
+
+
+});
+
+</script>
+
+
+</body>
+</html>

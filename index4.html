@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="container m-4">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3">
+                <div class="card" >
+                    <img class="card-img-top" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Card image cap" style="width:100%;height:90px">
+                    <div class="card-body">
+                    <h5 class=" title card-title">Headphones</h5>
+                    <p class=" desc card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button class=" add btn btn-info">Add</button>
+                    <span class="price">560</span>
+
+                    <span class="ml-4">
+                        <button class=" plus btn btn-sm btn-info"><i class="fas fa-plus"></i></button>
+                        <span id="quantity" class="mx-1">0</span>
+                        <button class=" minus btn btn-sm btn-info"><i class="fas fa-minus"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap" style="width:100%;height:90px">
+                    <div class="card-body">
+                    <h5 class=" title card-title">Camera</h5>
+                    <p class=" desc card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button class=" add btn btn-info">Add</button>
+                    <span class="price">82</span>
+
+                    <span class="ml-4">
+                        <button class="plus btn btn-sm btn-info"><i class="fas fa-plus"></i></button>
+                        <span id="quantity" class="mx-1">0</span>
+                        <button class=" minus btn btn-sm btn-info"><i class="fas fa-minus"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://cdn.corporatefinanceinstitute.com/assets/product-mix3.jpeg" alt="Card image cap" style="width:100%;height:90px">
+                    <div class="card-body">
+                    <h5 class=" title card-title"> Grocery</h5>
+                    <p class=" desc card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button class=" add btn btn-info">Add</button>
+                    <span class="price">470</span>
+
+                    <span class="ml-4">
+                        <button class="plus btn btn-sm btn-info"><i class="fas fa-plus"></i></button>
+                        <span id="quantity" class="mx-1">0</span>
+                        <button class=" minus btn btn-sm btn-info"><i class="fas fa-minus"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-3">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/04/2-2.jpg" alt="Card image cap" style="width:100%;height:90px">
+                    <div class="card-body">
+                    <h5 class=" title card-title"> Makeup</h5>
+                    <p class=" desc card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button class=" add btn btn-info">Add</button>
+                    <span class="price">50</span>
+
+                    <span class="ml-4">
+                        <button class="plus btn btn-sm btn-info"><i class="fas fa-plus"></i></button>
+                        <span id="quantity" class="mx-1">0</span>
+                        <button class=" minus btn btn-sm btn-info"><i class="fas fa-minus"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://image.shutterstock.com/image-photo/natural-cosmetic-cream-serum-skincare-260nw-1029009367.jpg" alt="Card image cap" style="width:100%;height:90px">
+                    <div class="card-body">
+                    <h5 class=" title card-title">Product</h5>
+                    <p class=" desc card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button class=" add btn btn-info">Add</button>
+                    <span class="price">10</span>
+
+                    <span class="ml-4">
+                        <button class="plus btn btn-sm btn-info"><i class="fas fa-plus"></i></button>
+                        <span id="quantity" class="mx-1">0</span>
+                        <button class=" minus btn btn-sm btn-info"><i class="fas fa-minus"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0070/7032/files/DIY_Product_Photography.jpg?v=1527090823" alt="Card image cap" style="width:100%;height:90px">
+                    <div class="card-body">
+                    <h5 class=" title card-title">Camera Collection</h5>
+                    <p class=" desc card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button class=" add btn btn-info">Add</button>
+                    <span class="price">200</span>
+                    <span class="ml-4">
+                        <button class="plus btn btn-sm btn-info"><i class="fas fa-plus"></i></button>
+                        <span id="quantity" class="mx-1">0</span>
+                        <button class=" minus btn btn-sm btn-info"><i class="fas fa-minus"></i></button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- <div class="row d-flex justify-content-center" style="margin-top: 3rem;">
+    
+            <div class="col-12">
+                <h3 class=" cart m-0 text-center font-weight-bold text-muted">
+                    Your Cart
+                </h3>
+                <div class="mt-2 p-4 bg-light" style="min-height: 120px;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
+
+
+    </div> -->
+
+
+    <div class="container">
+       
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product Name </th>
+              <th>Product Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Delete Item</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            
+           
+            
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+<script>
+$(document).ready(function () {
+
+    const array=[]
+    $('.plus').click(function () {
+        a= parseInt($(this).parent().find('#quantity').text())
+        $(this).parent().find('#quantity').text(a+1)
+    })
+    0
+    $('.minus').click(function() {
+        a= $(this).parent().find('#quantity').text()
+        if (a != 0){
+            $(this).parent().find('#quantity').text(a-1)
+        }
+    })
+
+$('.add').click(function () {
+   title= $(this).parent().find('.title').text()
+    desc= $(this).parent().find('.desc').text()
+    price=parseInt($(this).parent().find('.price').text())
+    quantity=parseInt($(this).parent().find('#quantity').text())
+    total=price*quantity
+
+    row =$(`<tr><span class ="remove"></span></tr>`)
+    col1= $(`<td> ${title}</td>`)
+    col2= $(`<td> <span class="price2">${price}</span></td>`)
+    col3= $(`<td><span><i class=" plus2 fas fa-plus"></i><span class ="quantity2">${quantity}</span><i class=" minus2 fas fa-minus"></i></span></td>`)
+    col4= $(`<td><span class="total">${total}</span></td>`)
+    col5= $(`<td><button class=" btn btn-danger delete">Delete</button></td>`)
+
+    // col5=$(`<td><button class ="delete btn btn-danger"> Delete<button></td>`)
+
+    col1.appendTo(row)
+    col2.appendTo(row)
+    col3.appendTo(row)
+    col4.appendTo(row)
+    col5.appendTo(row)
+
+
+    row.appendTo('tbody')
+
+
+})
+
+$(document).on('click','.plus2',function () {
+    g=$(this).parent().find('.quantity2').text()
+    $(this).parent().find('.quantity2').text(parseInt(g)+1)
+
+    p=parseInt($(this).parent().parent().parent().find('.price2').text())
+    q=parseInt($(this).parent().find('.quantity2').text())
+    t=p*q
+    console.log(p)
+    console.log(q)
+    console.log(t)
+    
+
+   $(this).parent().parent().parent().find('.total').text(t)
+   array.push(t)
+    
+   for(let i=0; i<array.length;i++){
+       console.log("array ele :",array[i],"<br>")
+       if(array[i]>array[i+1]){
+           console.log(array[i])
+           $('tbody').children().find('.total').css("background-color","green")
+       
+
+       }
+       
+
+                  
+        
+    }
+  
+})
+
+$(document).on('click','.minus2',function () {
+    g=$(this).parent().find('.quantity2').text()
+    if(g!=0){
+        $(this).parent().find('.quantity2').text(parseInt(g)-1)
+        p=parseInt($(this).parent().parent().parent().find('.price2').text())
+        q=parseInt($(this).parent().find('.quantity2').text())
+        t=p*q
+        console.log(p)
+        console.log(q)
+        console.log(t)
+
+   $(this).parent().parent().parent().find('.total').text(t)
+
+    }
+
+})
+
+$(document).on('click','.delete',function() {
+    console.log('kkkkkkkkkkk')
+    $(this).parent().parent().remove()
+
+})
+
+})
+</script>
+
+
+</body>
+</html>
