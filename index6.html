@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+</head>
+<body>
+    <div class="continer">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="quantity">Quantity</label><br>
+                <input class="quantity " type="number" value="1" min="1">
+                <p class="cost">60</p>
+                <span class="update"></span>
+                <span class="update2">0</span>
+                <button class="del">DELETE</button> 
+            </div>
+
+            <div class="col-md-6">
+                <label for="quantity">Quantity</label><br>
+                <input class="quantity " type="number" value="1" min="1">
+                <p class="cost">60</p>
+                <span class="update"></span>
+                <span class="update2">0</span>
+                <button class="del">DELETE</button> 
+            </div>
+
+
+
+        </div>
+
+     
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="five"></div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('.quantity').change(function(){
+                console.log($(this))
+           quantity=($(this).parent().find('.quantity').val())
+           console.log('quantity',quantity)
+           cost=(parseInt($(this).parent().find('.cost').text()))
+           console.log('cost---',cost)
+           total=parseInt(quantity)*cost
+           console.log('total', total)
+           $(this).parent().find('.update2').remove()
+           $(this).parent().find('.update').text(total)
+           
+        //    $(this).parent().find('.cost').text()
+         
+
+            })
+            $('.del').click(function(){
+                $(this).parent().remove()
+            })
+
+
+
+
+        })
+        b={
+            "name":"dam",
+            "age":2,
+            "sub":"eng"
+        }
+        $.each(b,function(i,e){
+          //  document.write( "Key: " + i + ", Value: " + e );
+            document.write("index--" + i +", element--"+ e);
+            
+        })
+
+        SS=[576,807,80,465,890,00,111]
+    $.each(SS,function(i,e){
+        document.write(i +"</br>"+ e)
+    })
+
+      //  var a=[56,08,896,89]
+       // $.each(a,function(i,e){
+       //     document.write(e + "</br>")
+       // })
+
+       var arr = [ "one", "two", "three", "four", "five" ];
+        $.each( arr, function( i, val ) {
+        $( "#" + val ).text( "Mine is " + val + "." );
+        
+        // Will stop running after "three"
+        return ( val !== "three" );
+        });
+
+
+        $.each( [ "a", "b", "c" ], function( i, l ){
+        document.write( "Index #" + i + ": " + l );
+    });
+
+    $.each({ name: "John", lang: "JS" }, function( k, v ) {
+    alert( "Key: " + k + ", Value: " + v );
+    });
+
+
+    </script>
+</body>
+</html>

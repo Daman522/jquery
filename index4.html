@@ -148,22 +148,26 @@
         </table>
       </div>
 
-
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 <script>
-    let array=[]
-     if(array.length !=0){
-    console.log("max",Math.max.apply(null,array))
-    }
+    // let array=[]
+    //  if(array.length !=0){
+    // console.log("max",Math.max.apply(null,array))
+    // }
 
 
 
 let largest = 0;
 let largest_ele;
-// let smallest = 0;
-// let smallest_ele;
+let smallest;
+let smallest_ele;
+
+// if ($(this).height() < $(dvSmallest).height()) 
+//             dvSmallest = $(this);
+//     });
 
 function find_largest(row){
-    console.log(largest,$(row).find('.total').text())
+    // console.log(largest,$(row).find('.total').text())
     if(parseInt($(row).find('.total').text())  > largest){
         largest_ele = row;
         largest = $(row).find('.total').text();
@@ -173,30 +177,55 @@ function find_largest(row){
     $(largest_ele).addClass("alert alert-danger");
 }
 
-// function find_smallest(row){
-//     console.log(smallest,$(row).find('.total').text())
-//     if(parseInt($(row).find('.total').text())  < smallest){
-//         smallest_ele = row;
-//         smallest = $(row).find('.total').text();
-//     }
+function find_smallest(row){
+    // console.log('smallest',$(row).find('.total').text())
+    let first_row=($('tbody').find('tr:first'))
+    
+    if($('tr').length==2){
+        smallest=parseInt($('tbody').find('tr:first').find('.total').text())
+        smallest_ele=first_row
+        console.log("2")
+    }else{
+        if(smallest<parseInt($(row).find('.total').text())){
+            // smallest_ele=first_row
+        console.log("hhhh")
+        }
+    }
    
-//     $(document).find("tr").removeClass("alert alert-danger");
-//     $(smallest_ele).addClass("alert alert-success");
+
+    // console.log('firsttt rowwww,smallest',first_row, smallest)
+    // g=($(row).find('.total').text())
+    // console.log('ggggggggg', g)
+    // if(first_row<g){
+    //     $(row).find('.total'.text());
+    // }
+       
+    // $(document).find("tr").removeClass("alert alert-success");
+    // $(row).addClass("alert alert-success");
+    // console.log(smallest,$(row).find('.total').text())
+    // if(parseInt($(row).find('.total').text())  < smallest){
+    //     smallest_ele = row;
+    //     smallest = $(row).find('.total').text();
+    // }
    
-// }
+    // $(document).find("tr").removeClass("alert alert-success");
+    // // $(smallest_ele).addClass("alert alert-success");
+   
+}
 
 
 
 
 
 $(document).ready(function () {
-
+    $('tbody').sortable();
     let largest = 0;
-    // let smallest = 0;
+    // let smallest = 10000;
 
     $('.plus').click(function () {
         a= parseInt($(this).parent().find('#quantity').text())
         $(this).parent().find('#quantity').text(a+1)
+        $('tbody').sortable();
     })
     0
     $('.minus').click(function() {
@@ -204,22 +233,18 @@ $(document).ready(function () {
         if (a != 0){
             $(this).parent().find('#quantity').text(a-1)
         }
+        $('tbody').sortable();
     })
 
 
 $('.add').click(function () {
+
     title= $(this).parent().find('.title').text()
     desc= $(this).parent().find('.desc').text()
     price=parseInt($(this).parent().find('.price').text())
     quantity=parseInt($(this).parent().find('#quantity').text())
     total=price*quantity
-    array.push(total)
-
-    // n= Math.max.apply(null,array)
-    // n= parseInt($(this).parent().find('.total':conta).text())
-    // console.log('maximum element',n)
- 
-
+    
     row =$(`<tr><span class ="remove"></span></tr>`)
     col1= $(`<td> ${title}</td>`)
     col2= $(`<td> <span class="price2">${price}</span></td>`)
@@ -237,8 +262,8 @@ $('.add').click(function () {
 
 
     find_largest(row);
-    // find_smallest(row);
-
+    find_smallest(row);
+    $('tbody').sortable();
 
     
 })
@@ -257,13 +282,14 @@ $(document).on('click','.plus2',function () {
    $(this).parent().parent().parent().find('.total').text(t)
 
    find_largest($(this).parent().parent().parent());
-//    find_smallest($(this).parent().parent().parent());
+   find_smallest($(this).parent().parent().parent());
 
-
+   $('tbody').sortable();
 
 })
 
 $(document).on('click','.minus2',function () {
+    $('tbody').sortable();
     g=$(this).parent().find('.quantity2').text()
     if(g!=0){
         $(this).parent().find('.quantity2').text(parseInt(g)-1)
@@ -282,7 +308,7 @@ $(document).on('click','.minus2',function () {
 
 $(document).on('click','.delete',function() {
     $(this).parent().parent().remove()
-
+     $('tbody').sortable();
 })
 
 })
