@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5>VIEWS</h5>
+                         <p class=" first card-text">0</p>
+                      <button class=" my btn btn-primary">Go somewhere</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+   
+<script>
+ start=1
+ $(document).ready(function(){
+  
+    //  if (start<=600){
+    //     appendTens.innerHTML = "0" + start;
+
+    //  }
+ 
+
+     let i =0;
+     let x = setInterval(function() {
+                i +=1
+                console.log(i)
+                $('p.first').text(i)
+                if (i ==500){
+                    clearInterval(x);
+                    $('p.first').append("<span> Satisfied Customers! </span>")
+                }
+            },1)
+
+
+//    let g=600;
+//    b= setInterval(function(){
+//        g=g+1
+//        console.log(g)
+//        $('p.first').text(g)
+//        if(g==900){
+//            clearInterval(b);
+//        }
+
+//    },90)
+          
+
+//  })
+
+
+  
+// // },
+// // 100);
+// a=0
+// h=setInterval(function() {
+//  a=a+1
+//  $('.first').text(a);
+//   $('.first').css("font-size","30px","font-weight","bold")
+
+//  if(a==100){
+//     clearInterval(h)
+//  }
+
+// },
+// 100);
+})
+
+
+  
+
+
+</script>
+   
+   
+
+
+
+</body>
+</html>
