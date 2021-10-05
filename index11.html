@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">   
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <style>
+         .box{
+             height: 400px;
+           
+         }
+         .d{
+             height: 160px;
+            border: 2px solid rgb(204, 204, 204);
+            border-radius: 1rem;
+             margin:5px;
+         }
+         .d:hover{
+             box-shadow: 1px 1px 6px rgb(168, 168, 168);
+             cursor: pointer;
+         }
+        
+     </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-md-4 mt-0 text-center mt-4">
+                <button class=" add btn btn-sm btn-success text-center">Add</button> 
+                <button class="del btn btn-sm btn-success text-center">Delete</button> 
+            </div>
+       
+        </div>
+        <div class=" box row g-2 mt-4">
+            
+            <div class=" d col-3 d-flex align-items-center justify-content-center"></div>
+            <div class=" d col-3 d-flex align-items-center justify-content-center"></div>
+            <div class=" d col-3 d-flex align-items-center justify-content-center"></div>
+          
+        </div>
+        
+    
+       
+        
+      
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(document).on('click','.d',function(e){
+                if ($(this).find("input").length == 1){
+                    console.log("Xxxxx")
+                }
+                else{
+                    $(this).append('<input type="textarea" class="form-control form-control-sm input-sm w-50 ">')
+                }
+               
+               
+                
+            })
+            $(document).on('keypress','input',function(e){
+                if(e.which==13){
+                    $(this).parent().css("background-color", $(this).val());
+                    console.log($(this).val())
+                    $(this).remove('input')
+                }
+               
+            })
+            $('.add').click( function(){
+                $('.box').append('<div class=" d col-3 d-flex align-items-center justify-content-center"></div>')
+            })
+            $('.del').click( function(){
+                if($('.box').find('.d').length==1){
+                    console.log('one left')
+                }
+                else{
+                   
+                    $('.box').find('.d').last().remove()
+                    console.log('ddd')
+                }
+            
+            })
+
+
+        });
+    </script>
+</body>
+</html>

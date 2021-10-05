@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        .box{
+            background-color: hotpink;
+        }
+        .box2{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sortable" class="">
+        <ul id="in-sortable" class="list-group mt-4 p-5 bg-dark">
+            <li class="list-group-item alert-success">Item 1</li>
+            <li class="list-group-item alert-danger">Item 2</li>
+            <li class="list-group-item alert-warning">Item 3</li>
+            <li class="list-group-item alert-primary">Item 4</li>
+            <li class="list-group-item">Item 5</li>
+            <li class="list-group-item">Item6</li>
+        </ul>
+
+        <ul id="sortable2" class="list-group mt-5 p-5 bg-danger">
+            <li class="list-group-item alert-success text-bold">Item 7</li>
+            <li class="list-group-item alert-danger">Item 8</li>
+            <li class="list-group-item alert-warning">Item 9</li>
+            <li class="list-group-item alert-primary">Item 10</li>
+        </ul>
+
+        <ul id="sortable3" class="list-group mt-5 p-5 bg-success">
+            <li class="list-group-item alert-success text-bold">Item 11</li>
+            <li class="list-group-item alert-danger">Item 12</li>
+            <li class="list-group-item alert-warning">Item 13</li>
+           
+        </ul>
+    </div>
+    <script>
+    $( function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+    } );
+
+    $( function() {
+        $( "#in-sortable" ).sortable();
+        $( "#in-sortable" ).disableSelection();
+    } ); 
+    
+    $( function() {
+        $( "#sortable2" ).sortable();
+        $( "#sortable2" ).disableSelection();
+    } );
+
+    $( function() {
+        $( "#sortable3" ).sortable();
+        $( "#sortable3" ).disableSelection();
+    } );
+ 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>
