@@ -103,13 +103,25 @@ $('.bb').click(function(){
 // })
 
 // If ele is created after the page loads
-$(document).on('click','#del',function(){
-    $(this).parent().remove()
-})
+// $(document).on('click','#del',function(){
+//     $(this).parent().remove()
+// })
 
 
 
 });
+a="<iframe srcdoc='<div class='container'><div class='row border bg-light p-2'><div class='col-8  d-flex flex-column'><h3 class='m-0 p-0' style='font-size: 22px !important;'>Python Tutorial</h3><p class='m-0 p-0 text-muted roboto' style='font-size: 16px !important;'>Are you ready to start your path to becoming a Data Scientist! This comprehensive course will be your guide to learning how to use the power of Python to analyze data, create beautiful visualizations, anuse powerful machine learning algorithms!</p></div><div class='col-4'><img src='127.0.0.1:8000/media/images/course_nRBY9iv.jpeg' alt='' style='width: 200px'</div><a href='127.0.0.1:8000/courses/98764' class='text-decoration-none btn btn-sm btn-outline-primary mt-1'>Checkout The Complete Course</a></div> height='80px' width='100%' hidden=''></iframe>"
+
+for (let i=0;i<a.length;i++)
+{ if (a.includes("hidden")){
+        console.log("is hidden" )
+        break;
+        
+    }
+
+
+}
+
 
 </script>
 

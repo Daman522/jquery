@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <style>
+        .dropdown{
+        display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div> -->
+
+      <div class="wrapper">
+        <div class="button ">
+        <button value="Hover on me!" class="btn btn-secondary " id="hover">Hover On Me!
+        </button>
+        </div>
+
+        <div class="dropdown ">
+            <ul>
+            <li><a class="dropdown-item" href="#">JavaScript Page</a></li>
+            <li><a  class="dropdown-item" href="#">HTML Page</a></li>
+            <li><a  class="dropdown-item" href="#">CSS Page</li></a>
+            </ul>
+        </div>
+        </div>
+
+
+     <script>
+        //  $(document).ready(function(){
+        // $(".dropdown").mouseover(function(){
+        //     $(".dropdown").css("background-color", "yellow");
+        //     $(".dropdown").css("display", "block");
+        // });
+        // $(".dropdown").mouseout(function(){
+        //     $(".dropdown").css("background-color", "lightgray");
+        // });
+        // });
+
+
+
+        $(document).ready(function(){
+        $(".button").hover(function(){
+        $(".dropdown").slideToggle();
+        });
+        });
+     </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-12 mt-4 form-group">
+                <textarea type="text" class=" my form-control" rows="5"></textarea>
+            </div>
+            <div class="col-md 12">
+                <button class="copy btn btn-success mt-4">open</button>
+            </div>
+        </div>
+    </div>
+
+
+  
+
+
+
+
+
+
+
+
+</body>
+<script>
+
+$(document).ready(function(){
+    let mycode=$(`<iframe srcdoc='<div class="container"><div class="row border bg-light p-2"><div class="col-8  d-flex flex-column"><h3 class="m-0 p-0" style="font-size: 22px !important;">{{ course.title }}</h3><p class="m-0 p-0 text-muted roboto" style="font-size: 16px !important;">A small JavaScript course that will teach you the basics as well as some advanced level Js concepts. You can apply these to make small web apps or even games.Follow me on Twitter @_krnk97 for more course updates!</p></div><div class="col-4"><img src="https://learningpath.us/media/images/js.png" alt=""style="width: 200px"></div><a href="https://learningpath.us/courses/599619" class="text-decoration-none btn btn-sm btn-outline-primary mt-1">Checkout The Complete Course</a></div></div>' height="280px" width="100%"></iframe>`)
+    $('.my').hide()
+    let t=$('textarea')
+    $('button').on('click',function(){
+        $('.my').show()
+        t.text(mycode.attr('srcdoc'))
+        t.select();
+        document.execCommand('copy')
+    })
+
+    // $(document).find('modal-embed')
+
+
+    $('.modal-embed').find('textarea').text(mycode.attr('srcdoc'))
+    console.log(  $('.modal-embed').find('textarea').text(mycode.attr('srcdoc')),'-----')
+
+})
+</script>
+</html>
